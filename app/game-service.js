@@ -31,4 +31,14 @@ function GameService() {
             })
     }
 
+    this.deleteGame = function deleteGames(id, cb) {
+        $.ajax({
+                url: url + 'game.id',
+                method: 'DELETE'
+            })
+            .then(res => {
+                this.getGames(cb)
+            })
+    }
+
 }
