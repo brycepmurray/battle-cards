@@ -25,7 +25,7 @@ function GameService() {
             })
     }
     this.getGames = function getGames(cb) {
-        $.get(url + game.id)
+        $.get(url + ":" + gameId)
         console.log(games)
             .then(function(games) {
                 localGames = games
