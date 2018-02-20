@@ -1,5 +1,6 @@
 function GameService() {
     var url = 'https://inspire-server.herokuapp.com/cards';
+    var myGames = []
 
     //get game
     //create game
@@ -17,14 +18,15 @@ function GameService() {
 
     this.createGame = function createGame(formData, cb) {
         var game = new Game(formData)
-        $.post(url + game + game.id)
+        $.post(url + ":" + gameId)
             .then(res => {
-                localCars.unshift(res.data)
-                cb(localCars)
+                localGames.unshift(res.data)
+                cb(localGames)
             })
     }
     this.getGames = function getGames(cb) {
         $.get(url + game.id)
+        console.log(games)
             .then(function(games) {
                 localGames = games
                 cb(localGames)
