@@ -1,5 +1,5 @@
 function GameController() {
-    var gameService = new gameService()
+    var gameService = new GameService()
 
 
     function getGames() {
